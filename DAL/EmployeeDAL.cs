@@ -5,7 +5,7 @@ namespace EmployeeAPI.DAL
 {
     public class EmployeeDAL
     {
-        private readonly string _connectionString = "Data Source=LTIN190594\\MSSQLSERVERNEW;Initial Catalog=EmployeeDB;Integrated Security=true";
+        private readonly string? _connectionString = Environment.GetEnvironmentVariable("EmployeeDBConnection", EnvironmentVariableTarget.Machine);
         public IEnumerable<Employee> GetAllEmployees()
         {
             List<Employee> employees = new();
